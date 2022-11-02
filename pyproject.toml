@@ -4,15 +4,15 @@ build-backend = "poetry.core.masonry.api"
 
 [tool.poetry]
 version = "0.0.0"
+name = "qt_qxq2223"
+description = "QubitByQubit.com Quantum Computing Course Winter 2022/23"
 authors = ["qte77 <qte77>"]
 readme = "README.md"
 
 [tool.poetry.dependencies]
-black = "*"
+python = ">=3.9"
 bump2version = "*"
-flake8 = "*"
 interrogate = "*"
-isort = "*"
 pyupgrade = "*"
 pytest = "*"
 # mypy = "*"
@@ -37,11 +37,11 @@ fail-under = 95
 exclude = ["setup.py", "docs", "build", "tests"]
 verbose = 0
 
-[tool.mypy]
-warn_unused_configs = true
-warn_unused_ignores = true
-warn_unreachable = true
-warn_return_any = true
+# [tool.mypy]
+# warn_unused_configs = true
+# warn_unused_ignores = true
+# warn_unreachable = true
+# warn_return_any = true
 
 [tool.pytest.ini_options]
 minversion = "6.0"
