@@ -1,0 +1,53 @@
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.poetry]
+version = "0.0.0"
+authors = ["qte77 <qte77>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+black = "*"
+bump2version = "*"
+flake8 = "*"
+interrogate = "*"
+isort = "*"
+pyupgrade = "*"
+pytest = "*"
+# mypy = "*"
+# pdoc = "*"
+# "blacken-docs" = "*"
+# pipenv = "*"
+# "pytest-cov" = "*"
+# sphinx = "*"
+# tox = "*"
+
+[tool.isort]
+profile = "black"
+src_paths = ["app", "tests"]
+
+[tool.black]
+line_length = 88
+src_paths = ["app", "tests"]
+target-version = ["py37", "py38", "py39", "py310"]
+
+[tool.interrogate]
+fail-under = 95
+exclude = ["setup.py", "docs", "build", "tests"]
+verbose = 0
+
+[tool.mypy]
+warn_unused_configs = true
+warn_unused_ignores = true
+warn_unreachable = true
+warn_return_any = true
+
+[tool.pytest.ini_options]
+minversion = "6.0"
+addopts = "-rfEX -svv --color=yes --code-highlight=yes --doctest-modules"
+testpaths = [
+    "tests"
+]
+log_format = "%(asctime)s %(levelname)s %(message)s"
+log_date_format = "%Y-%m-%d %H:%M:%S"
